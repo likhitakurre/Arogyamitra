@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="te">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Telugu HealthBot — Home</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="app-body">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo-circle">
+        🤖
+      </div>
+      <div class="logo-text">
+        <span class="logo-title">Aarogyamitra</span>
+        <span class="logo-subtitle">తెలుగు + Code-mixed ఆరోగ్య సహాయకుడు</span>
+      </div>
+    </div>
+    <nav class="nav-right">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#how-it-works" class="nav-link">How it works</a>
+      <a href="auth.html" class="btn btn-ghost">Login</a>
+      <a href="auth.html#signup" class="btn btn-primary">Sign up</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main class="main-wrapper">
+    <section class="hero">
+      <div class="hero-left card card-hero">
+        <p class="hero-tag">Early Demo • RAG + GPT-2 + Telugu–English</p>
+        <h1 class="hero-title">Aarogyamitra</h1>
+        <p class="hero-subtitle">
+          తెలుగు & code-mixed ఆరోగ్య ప్రశ్నలకు నిమిషాల్లో సమాధానాలు —
+          వేగంగా, సులభంగా, సమాచారం కోసం మాత్రమే.
+        </p>
+
+        <ul class="hero-list">
+          <li>✅ హృద్యమైన తెలుగులో & code-mixed సంభాషణలు</li>
+          <li>✅ Most-asked quick questions with one-tap answers</li>
+          <li>✅ Local demo login / signup (browser-only)</li>
+          <li>✅ Safe: informational medical advice only — always consult a doctor</li>
+        </ul>
+
+        <div class="hero-actions">
+          <a href="auth.html" class="btn btn-primary btn-lg">Login</a>
+          <a href="auth.html#signup" class="btn btn-outline btn-lg">Create account</a>
+        </div>
+
+        <p class="hero-note">
+          * Aarogyamitra does not replace a doctor. For emergencies, contact a medical professional immediately.
+        </p>
+      </div>
+
+      <!-- RIGHT: CHAT PREVIEW -->
+      <div class="hero-right card chat-preview">
+        <div class="window-dots">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="chat-preview-title">
+          <span class="bot-name">Aarogyamitra</span>
+          <span class="bot-status">Online • Beta</span>
+        </div>
+
+        <div class="chat-preview-body">
+          <div class="msg msg-bot">
+            <span class="msg-label">Aarogyamitra:</span>
+            <p>నమస్తే! నేను మీ ఆరోగ్య సహాయకుడు — ఎలా సహాయం చేయగలను?</p>
+          </div>
+
+          <div class="msg msg-user">
+            <span class="msg-label">User:</span>
+            <p>నాకు దగ్గు & జ్వరం ఉన్నాయి, ఏమి చేయాలి?</p>
+          </div>
+
+          <div class="msg msg-bot">
+            <span class="msg-label">Aarogyamitra:</span>
+            <p>
+              First, try rest, warm fluids, and paracetamol (if not allergic).
+              If fever &gt; 3 days or breathing difficulty → consult a doctor immediately.
+            </p>
+          </div>
+        </div>
+
+        <div class="chat-preview-input">
+          <div class="input-fake">మీ ప్రశ్న ఇక్కడ టైప్ చేయండి…</div>
+          <button class="btn btn-primary btn-circle">➤</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+      <h2 class="section-title">What we offer</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Code-mixed Telugu understanding</h3>
+          <p>
+            Trained with Telugu–English code-mixed data so you can chat naturally,
+            the way you text on WhatsApp.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Knowledge-base powered (RAG)</h3>
+          <p>
+            Built using a medical text knowledge base, multilingual sentence transformers,
+            and FAISS vector search for grounded answers.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>GPT-2 + LoRA fine-tuning</h3>
+          <p>
+            GPT-2 small with lightweight LoRA adapters tuned for health dialogues
+            in Telugu and English mix.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Safe & informational only</h3>
+          <p>
+            Designed for guidance and education — not a substitute for professional
+            diagnosis, treatment, or emergency care.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="section section-steps">
+      <h2 class="section-title">How Aarogyamitra works</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-number">1</span>
+          <h3>Ask in Telugu or code-mix</h3>
+          <p>
+            Type your question in pure తెలుగు, English, or both.
+            The bot handles casual, mixed-script queries.
+          </p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">2</span>
+          <h3>Retrieve from KB</h3>
+          <p>
+            A multilingual sentence-BERT model finds the closest medical snippets
+            from the knowledge base using FAISS.
+          </p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">3</span>
+          <h3>Generate a grounded reply</h3>
+          <p>
+            GPT-2 with LoRA fine-tuning uses those snippets to answer in friendly,
+            easy-to-understand Telugu.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-about">
+      <div class="about-card card">
+        <h2 class="section-title">About Aarogyamitra</h2>
+        <p>
+          Aarogyamitra is a research prototype exploring how Retrieval-Augmented
+          Generation (RAG) and small language models can support health information
+          access for Telugu speakers. All responses are automatically generated and
+          should be verified with a qualified medical professional.
+        </p>
+        <a href="auth.html" class="btn btn-primary">Try the demo</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>
+      © 2025 Aarogyamitra • Demo for research & education only.
+      Always consult a doctor for medical decisions.
+    </p>
+  </footer>
+</body>
+</html>

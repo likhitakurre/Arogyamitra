@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="te">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Telugu HealthBot — Chat</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="app-body chat-body">
+
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo-circle">🤖</div>
+      <div class="logo-text">
+        <span class="logo-title">Telugu HealthBot</span>
+        <span class="logo-subtitle">Chat demo</span>
+      </div>
+    </div>
+    <nav class="nav-right">
+      <a href="home.html" class="nav-link">Home</a>
+      <a href="auth.html" class="nav-link">Account</a>
+    </nav>
+  </header>
+
+  <main class="main-wrapper chat-wrapper">
+    <aside class="chat-sidebar card">
+      <h2 class="sidebar-title">Sessions</h2>
+      <button class="btn btn-outline btn-full" id="new-chat-btn">+ New chat</button>
+
+      <div class="chat-session-list" id="session-list">
+        <button class="chat-session active">General health demo</button>
+        <button class="chat-session">Fever & cough</button>
+        <button class="chat-session">Diet & lifestyle</button>
+      </div>
+
+      <div class="sidebar-footer">
+        <h3 class="sidebar-subtitle">Quick tips</h3>
+        <ul class="sidebar-list">
+          <li>⚠️ Emergency? Call your local ambulance number.</li>
+          <li>🩺 Always cross-check with a real doctor.</li>
+          <li>🔒 This is a local research demo only.</li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="chat-main card">
+      <header class="chat-header">
+        <div class="chat-header-left">
+          <div class="avatar-circle">🤖</div>
+          <div>
+            <h1 class="chat-title">Telugu HealthBot</h1>
+            <p class="chat-subtitle">Ask your health questions in తెలుగు or English</p>
+          </div>
+        </div>
+        <div class="chat-header-right">
+          <span class="status-dot"></span>
+          <span class="status-text">Model: GPT-2 + RAG (demo)</span>
+        </div>
+      </header>
+
+      <div class="chat-window" id="chat-window">
+        <div class="chat-msg bot">
+          <div class="chat-bubble">
+            <p>నమస్తే 👋 నేను Telugu HealthBot. నేను సాధారణ ఆరోగ్య సమాచారంలో మీకు సహాయం చేస్తాను. మీ మొదటి ప్రశ్న టైప్ చేయండి.</p>
+            <span class="chat-meta">Bot • just now</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-suggestions" id="chat-suggestions">
+        <button class="chip">నాకు దగ్గు & జ్వరం ఉన్నాయి</button>
+        <button class="chip">BP ఎక్కువైతే ఏమి చేయాలి?</button>
+        <button class="chip">What are COVID symptoms?</button>
+      </div>
+
+      <form class="chat-input-bar" id="chat-form">
+        <textarea
+          id="chat-input"
+          rows="1"
+          placeholder="మీ ప్రశ్నని ఇక్కడ టైప్ చేయండి… (e.g., 'నాకు గొంతు నొప్పి ఉంది')"
+        ></textarea>
+        <button type="submit" class="btn btn-primary btn-circle">➤</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const chatWindow    = document.getElementById('chat-window');
+    const chatForm      = document.getElementById('chat-form');
+    const chatInput     = document.getElementById('chat-input');
+    const suggestions   = document.getElementById('chat-suggestions');
+    const chips         = document.querySelectorAll('.chip');
+
+    function addMessage(text, sender = 'user') {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'chat-msg ' + (sender === 'bot' ? 'bot' : 'user');
+
+      const bubble = document.createElement('div');
+      bubble.className = 'chat-bubble';
+      bubble.innerHTML = '<p>' + text + '</p><span class="chat-meta">' +
+        (sender === 'bot' ? 'Bot' : 'You') + ' • just now</span>';
+
+      wrapper.appendChild(bubble);
+      chatWindow.appendChild(wrapper);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+
+    // ⭐ YOUR GRADIO API URL HERE ⭐
+const API_URL = "https://e38977403ed7aaaf16.gradio.live";
+
+async function realBotReply(userText) {
+    try {
+        addMessage("Thinking… 🤔", "bot");
+
+        const res = await fetch(`${API_URL}/api/predict`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ data: [userText] })
+        });
+
+        const json = await res.json();
+        const output = json.data[0]; // JSON returned from chat_function
+
+        // Remove Thinking bubble
+        const bubbles = document.querySelectorAll(".chat-msg.bot");
+        if (bubbles.length > 0) bubbles[bubbles.length - 1].remove();
+
+        let finalText = `🗣️ **Code-Mixed:**\n${output.code_mixed}\n\n🇹🇱 **Pure Telugu:**\n${output.pure_telugu}\n\n📌 References:\n`;
+        output.references.forEach((r, i) => {
+            finalText += `• ${r}\n`;
+        });
+
+        addMessage(finalText, "bot");
+
+    } catch (err) {
+        console.error(err);
+        addMessage("⚠️ Backend error. Please try again.", "bot");
+    }
+}
+
+
+
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const text = chatInput.value.trim();
+      if (!text) return;
+      addMessage(text, 'user');
+      chatInput.value = '';
+      realBotReply(text);
+    });
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chatInput.value = chip.textContent;
+        chatInput.focus();
+      });
+    });
+  </script>
+</body>
+</html>

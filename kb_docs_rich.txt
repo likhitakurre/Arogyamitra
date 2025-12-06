@@ -1,0 +1,72 @@
+# =============================================
+# Improved Telugu Healthcare Knowledge Base
+# Long format, codemixed Telugu, user-friendly
+# =============================================
+
+Fever (Jwaram)
+Fever ante body lo infection or viral flu valla ostundi. Mundu panic avvakandi. Body pain, weakness, chills or headache unte rest mandatory. 
+✔ Warm water frequently tagandi to keep body hydrated.
+✔ Light food like kanji, fruits, dal rice tinetappudu stomach easy ga digest avutundi.
+✔ Paracetamol 500mg only if fever high unte and doctor recommend chesunte matrame.
+✔ Sponging chesthe temperature slow ga takkuvavutundi.
+🚫 Ice water, cold drinks avoid cheyyandi.
+⚠️ 103°F kanna ekkuva fever 24 hours kanna ekkuva unte or chest pain, confusion unte immediate ga hospital ki vellandi.
+
+Headache (Talaneoppi)
+Headache dehydration, tension, cold or lack of sleep valla ostundi. 
+✔ Silent room lo rest teesukondi and mobile, TV avoid cheyyandi.
+✔ Slight forehead massage and warm water tagadam help chestundi.
+✔ Eye strain unte screen time tagginchandi and proper sleep techukondi.
+✔ Paracetamol okka sari doctor suggest chesunte tisukovachu.
+🚫 Loud noise, bright light avoid cheyyandi.
+⚠️ Headache toh vomiting, vision problem, numbness unte emergency medical help teesukondi.
+
+Cough (Dummu / Cough)
+Cough ante throat irritation or chest infection valla ostundi. 
+✔ Warm water and steam inhalation 5–10 minutes help chestundi.
+✔ Honey + warm water mild cough ki super relief isthundi (Children <1 year ki honey ivvakandi).
+✔ Dust and cold exposure avoid cheyyandi.
+✔ Cough medication doctor suggest chesunte matrame use cheyyandi.
+🚫 Smoking or cold drinks avoid cheyyandi.
+⚠️ 1 week kanna ekkuva cough continue ayithe or chest pain, breathing problem unte doctor ni kalavandi.
+
+Cold / Flu (Jwaram + Sneezing + Nose Block)
+Common cold viral infection valla vastundi and usually 3–5 days lo settle avutundi. 
+✔ Rest and warm fluids like soup, tea, turmeric milk helpful.
+✔ Nose block unte saline drops use chesthe free ga breathe chestaru.
+✔ Steam inhalation twice a day chesthe congestion thaggutundi.
+🚫 Ice creams, fridge water avoid cheyyandi.
+⚠️ High fever, severe cough, chest tightness unte medical help teesukondi.
+
+Throat Pain / Sore Throat (Gantuloppi)
+Throat pain cold, infection or voice strain valla ostundi.
+✔ Warm salt water gargle twice a day cheyyandi.
+✔ Warm water tagadam and spicy food avoid cheyyadam useful.
+✔ Honey + turmeric mixed with warm milk throat soothing relief isthundi.
+🚫 Ice water avoid cheyyandi.
+⚠️ Severe pain, swallowing difficulty or fever unte doctor ni kalavandi.
+
+Body Pain / Joint Pain (Elder Friendly)
+Age valla calcium and joint lubrication taggadam valla pain vastundi.
+✔ Warm compress or mild hot water bath relief isthundi.
+✔ Light stretching or walking helpful.
+✔ Calcium foods like milk, curd, nuts tinandi.
+✔ If pain severe unte doctor suggest chesina painkiller use cheyyandi.
+⚠️ Sudden swelling, redness or fever unte doctor consult compulsory.
+
+BP (Blood Pressure)
+High BP silent disease — symptoms lekunda untundi kani serious ga tisukovali.
+✔ Salt thagginchandi and deep breathing daily practice cheyyandi.
+✔ Walking 20–30 min chesi stress control cheyyandi.
+✔ Tablets doctor prescribe chesunte skip cheyyakandi.
+⚠️ Severe headache, blurred vision, nose bleeding unte emergency care.
+
+Sugar/Diabetes
+Blood sugar control maintain cheyyadam important.
+✔ White rice thagginchi ragi, brown rice, oats try cheyyandi.
+✔ Fruits ok but moderation lo.
+✔ Morning walk and sleep regular maintain cheyyandi.
+🚫 Sweets, soft drinks avoid cheyyandi.
+⚠️ Dizziness, weakness, sweating unte sugar low — quick sweet item tinandi.
+
+# END OF FILE
